@@ -5,24 +5,42 @@
 class Diffpane < Formula
   desc "Real-time TUI diff viewer for AI coding agents"
   homepage "https://github.com/Astro-Han/diffpane"
-  version "0.3.0"
+  version "0.3.1"
   license "MIT"
-  depends_on :macos
 
-  if Hardware::CPU.intel?
-    url "https://github.com/Astro-Han/diffpane/releases/download/v0.3.0/diffpane_0.3.0_darwin_amd64.tar.gz"
-    sha256 "c939ecdca801ae8d25a70241e28b209c7bc808635f7a1c2be749d238a4249194"
+  on_macos do
+    if Hardware::CPU.intel?
+      url "https://github.com/Astro-Han/diffpane/releases/download/v0.3.1/diffpane_0.3.1_darwin_amd64.tar.gz"
+      sha256 "47785bc3b7b510fffd99273e4c030b8f69eb43c0fd305afcf9b202ad18e4cc9c"
 
-    define_method(:install) do
-      bin.install "diffpane"
+      define_method(:install) do
+        bin.install "diffpane"
+      end
+    end
+    if Hardware::CPU.arm?
+      url "https://github.com/Astro-Han/diffpane/releases/download/v0.3.1/diffpane_0.3.1_darwin_arm64.tar.gz"
+      sha256 "f60eb7a6c26ac36a9d07f93e11779d847fa4fffea9a53d790d65fdeb88541132"
+
+      define_method(:install) do
+        bin.install "diffpane"
+      end
     end
   end
-  if Hardware::CPU.arm?
-    url "https://github.com/Astro-Han/diffpane/releases/download/v0.3.0/diffpane_0.3.0_darwin_arm64.tar.gz"
-    sha256 "104247e2cb2849f1f57cd0da870012771462140de07f308181269ada1a9915ed"
 
-    define_method(:install) do
-      bin.install "diffpane"
+  on_linux do
+    if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
+      url "https://github.com/Astro-Han/diffpane/releases/download/v0.3.1/diffpane_0.3.1_linux_amd64.tar.gz"
+      sha256 "277f0706f69292b4b3725f6fd2519ea122600f3438ccc7e84b2ce6319da0ee25"
+      define_method(:install) do
+        bin.install "diffpane"
+      end
+    end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/Astro-Han/diffpane/releases/download/v0.3.1/diffpane_0.3.1_linux_arm64.tar.gz"
+      sha256 "fbea90916b005d940be7eb0ec22e26ccb0199cc34afb9203dfcec3d6c5457938"
+      define_method(:install) do
+        bin.install "diffpane"
+      end
     end
   end
 end
