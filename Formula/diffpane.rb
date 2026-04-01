@@ -5,21 +5,21 @@
 class Diffpane < Formula
   desc "Real-time TUI diff viewer for AI coding agents"
   homepage "https://github.com/Astro-Han/diffpane"
-  version "0.3.1"
+  version "0.4.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/Astro-Han/diffpane/releases/download/v0.3.1/diffpane_0.3.1_darwin_amd64.tar.gz"
-      sha256 "47785bc3b7b510fffd99273e4c030b8f69eb43c0fd305afcf9b202ad18e4cc9c"
+      url "https://github.com/Astro-Han/diffpane/releases/download/v0.4.0/diffpane_0.4.0_darwin_amd64.tar.gz"
+      sha256 "b37120efdc9bd188875a611830f853b63a6d5a4d7cf9fbf277261f294b61acf0"
 
       define_method(:install) do
         bin.install "diffpane"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/Astro-Han/diffpane/releases/download/v0.3.1/diffpane_0.3.1_darwin_arm64.tar.gz"
-      sha256 "f60eb7a6c26ac36a9d07f93e11779d847fa4fffea9a53d790d65fdeb88541132"
+      url "https://github.com/Astro-Han/diffpane/releases/download/v0.4.0/diffpane_0.4.0_darwin_arm64.tar.gz"
+      sha256 "e53020419685513a482c91fe5a983a4e9bae16b0d60338d2482c53fe4e730850"
 
       define_method(:install) do
         bin.install "diffpane"
@@ -29,15 +29,15 @@ class Diffpane < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/Astro-Han/diffpane/releases/download/v0.3.1/diffpane_0.3.1_linux_amd64.tar.gz"
-      sha256 "277f0706f69292b4b3725f6fd2519ea122600f3438ccc7e84b2ce6319da0ee25"
+      url "https://github.com/Astro-Han/diffpane/releases/download/v0.4.0/diffpane_0.4.0_linux_amd64.tar.gz"
+      sha256 "8747f0426336a4d68befb556ccc7299d864e933cb5ab22f61176de3f584382a5"
       define_method(:install) do
         bin.install "diffpane"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/Astro-Han/diffpane/releases/download/v0.3.1/diffpane_0.3.1_linux_arm64.tar.gz"
-      sha256 "fbea90916b005d940be7eb0ec22e26ccb0199cc34afb9203dfcec3d6c5457938"
+      url "https://github.com/Astro-Han/diffpane/releases/download/v0.4.0/diffpane_0.4.0_linux_arm64.tar.gz"
+      sha256 "de557ab837a2b7bffc724ceb7eebd4e2147b4bbd0c3afdcfbd8a9b0ea4e19c27"
       define_method(:install) do
         bin.install "diffpane"
       end
